@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-skm2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-skm2
+  template:
+    metadata:
+      labels:
+        app: argo-skm2
+    spec:
+      containers:
+        - name: argo-skm2
+          image: sureshmavp1/argo-skm2:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
