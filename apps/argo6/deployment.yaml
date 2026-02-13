@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo6
+  template:
+    metadata:
+      labels:
+        app: argo6
+    spec:
+      containers:
+        - name: argo6
+          image: sureshmavp1/argo6:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
