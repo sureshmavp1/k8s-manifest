@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-ui-plugin-test1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-ui-plugin-test1
+  template:
+    metadata:
+      labels:
+        app: argo-ui-plugin-test1
+    spec:
+      containers:
+        - name: argo-ui-plugin-test1
+          image: sureshmavp1/argo-ui-plugin-test1:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
